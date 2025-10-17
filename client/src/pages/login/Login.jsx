@@ -43,6 +43,8 @@ const loginHandler = async ()=> {
     })
     localStorage.setItem("token", res.data.token)
     localStorage.setItem("userId", res.data.user._id)
+    setEmail("")
+    setPassword("")
 setUserData(res.data.user)
     console.log(res.data.user)
     navigate("/home")
