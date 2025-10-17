@@ -113,9 +113,10 @@ useEffect(() => {
             setIsOpen(false)
             localStorage.removeItem("token")
             localStorage.removeItem("userId")
+            setIsToggle(false)
+            setIsOpen(false)
             navigate("/")
-                              setIsToggle(false)
-                  setIsOpen(false)
+            window.location.reload()
           }}>logout</li>
         </div>
       </div>

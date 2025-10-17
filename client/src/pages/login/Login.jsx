@@ -3,12 +3,15 @@ import "./login.scss"
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { toastAlert } from '../../utils/toastAlert'
+import { UserContext } from '../../context/UserContext'
+import { useContext } from 'react'
 
 const Login = () => {
 const [isPasswordHidden, setIsPasswordHidden] = useState(true)
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const [isLoading, setIsLoading] = useState(false)
+const { setUserData } = useContext(UserContext)
 const navigate = useNavigate()
 
 const loginHandler = async ()=> {
@@ -40,6 +43,8 @@ const loginHandler = async ()=> {
     })
     localStorage.setItem("token", res.data.token)
     localStorage.setItem("userId", res.data.user._id)
+setUserData(res.data.user)
+    console.log(res.data.user)
     navigate("/home")
     setIsLoading(false)
     return toastAlert({
