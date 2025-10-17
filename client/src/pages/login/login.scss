@@ -1,0 +1,134 @@
+.login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        display: flex;
+            gap: 30px;
+            flex-direction: column;
+            box-shadow: 0px 10px 10px rgb(209, 208, 208);
+            padding: 40px 30px;
+            border-radius: 20px ;
+
+    }
+
+    .email {
+display: flex;
+flex-direction: column;
+gap: 13px;
+font-size: 14px;
+
+span {
+    color: #4b4848;
+    font-weight: 500;
+}
+        input {
+            box-shadow: 2px 2px 10px rgb(209, 208, 208);
+            height: 40px;
+            width: 280px;
+            padding: 0 10px;
+            border: 0;
+            outline: none;
+        }
+    }
+
+    .password {
+display: flex;
+flex-direction: column;
+gap: 13px;
+font-size: 14px;
+
+span {
+    color: #4b4848;
+    font-weight: 500;
+}
+
+        input {
+                        box-shadow: 0px 2px 10px rgb(209, 208, 208);
+            padding: 0 10px;
+            width: 230px;
+            height: 40px;
+            border: 0;
+border-right: none;
+outline: none;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+
+           .passwordToggle {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                background-color: white;
+                height: 40px;
+                width: 50px;
+                            box-shadow: 0px 2px 10px rgb(230, 227, 227);
+                border: none;
+            }
+        }
+    }
+
+.btnCon {
+display: flex;
+flex-direction: column;
+gap: 20px;
+width: 280px;
+
+        button {
+width: 80px;
+height: 30px;
+font-size: 14px;
+        cursor: pointer;
+        background-color: #091cff;
+        color: white;
+        border: none;
+        outline: none;
+        align-self: flex-start;
+    }
+
+button:hover {
+    opacity: 0.8;
+}
+
+.loaderContainer {
+    width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 30px;
+}
+
+.loader {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid #091cff;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+    0% {
+transform: rotate(0deg);
+    }
+     100% {
+transform: rotate(360deg);
+    }
+}
+
+    span {
+color: #4b4848;
+font-size: 15px;
+        a {
+            color: #091cff;
+            font-weight: 500;
+        }
+    }
+}
+
+}

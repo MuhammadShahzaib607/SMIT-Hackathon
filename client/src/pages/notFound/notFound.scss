@@ -1,0 +1,45 @@
+.notfound {
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  .notfound-content {
+    text-align: center;
+    color: royalblue;
+
+    h1 {
+      font-size: 6rem;
+      margin-bottom: 0;
+      font-weight: bold;
+      color: royalblue;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 2rem;
+    }
+
+    .notfound-btn {
+      background-color: royalblue;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #001b4d;
+      }
+    }
+  }
+}
