@@ -1,0 +1,193 @@
+// Variables for a Professional Look
+$primary-blue: #0077c2;      // Primary action color
+$secondary-green: #00c49a;   // Highlight/Success color
+$text-dark: #1f2937;         // Dark text for high contrast
+$bg-light: #f9fbfd;          // Light, soft background
+$card-bg: #ffffff;
+$shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.08);
+$shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+.homepage-content {
+    font-family: 'Inter', sans-serif; 
+    color: $text-dark;
+    background-color: $bg-light;
+    
+    .strong { font-weight: 700; color: $primary-blue; }
+
+    // ===============================
+    // 1. HERO SECTION STYLING
+    // ===============================
+    .hero-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 5%;
+        min-height: 70vh;
+        gap: 60px;
+
+        @media (max-width: 992px) {
+            flex-direction: column-reverse; 
+            text-align: center;
+            padding: 60px 5%;
+        }
+
+        .hero-content {
+            max-width: 550px;
+
+            .headline {
+                font-size: 3.8rem;
+                font-weight: 900; 
+                line-height: 1.15;
+                margin-bottom: 25px;
+
+                @media (max-width: 768px) {
+                    font-size: 2.8rem;
+                }
+
+                .highlight {
+                    color: $secondary-green;
+                    background: linear-gradient(180deg, $secondary-green, darken($secondary-green, 10%));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    display: inline-block;
+                }
+            }
+
+            .subhead {
+                font-size: 1.25rem;
+                color: lighten($text-dark, 40%);
+                margin-bottom: 40px;
+                line-height: 1.6;
+            }
+
+            .cta-button {
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                padding: 18px 40px;
+                font-size: 1.15rem;
+                font-weight: 700;
+                border-radius: 10px;
+                text-decoration: none;
+                transition: transform 0.3s, box-shadow 0.3s;
+                
+                &.primary {
+                    color: $card-bg;
+                    background-color: $primary-blue;
+                    box-shadow: 0 10px 20px rgba($primary-blue, 0.3);
+                }
+
+                &:hover {
+                    transform: translateY(-3px);
+                }
+            }
+        }
+
+        .hero-visual {
+            width: 100%;
+            max-width: 500px;
+            min-height: 400px; 
+            background-color: $card-bg;
+            border-radius: 15px;
+            box-shadow: $shadow-strong;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: lighten($text-dark, 50%);
+            font-size: 1.2rem;
+            
+            @media (max-width: 992px) {
+                max-width: 100%;
+                min-height: 300px;
+            }
+        }
+    }
+
+    // ===============================
+    // 2. VALUE SECTION STYLING
+    // ===============================
+    .value-section {
+        padding: 80px 5%;
+        background-color: $card-bg;
+        text-align: center;
+        border-top: 1px solid #eee;
+
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: $shadow-subtle;
+            text-align: left;
+            border-left: 5px solid $secondary-green; 
+            transition: all 0.3s;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: $shadow-strong;
+            }
+
+            .value-icon {
+                font-size: 2.8rem;
+                color: $primary-blue;
+                margin-bottom: 15px;
+            }
+
+            h3 {
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            p {
+                color: lighten($text-dark, 20%);
+                line-height: 1.6;
+            }
+        }
+    }
+    
+    // ===============================
+    // 3. FINAL CTA SECTION STYLING
+    // ===============================
+    .final-cta-section {
+        padding: 100px 5%;
+        text-align: center;
+        background-color: $bg-light; 
+        
+        .cta-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .cta-subtitle {
+             font-size: 1.1rem;
+             color: lighten($text-dark, 30%);
+             margin-bottom: 40px;
+        }
+        
+        .cta-button.secondary {
+            background-color: royalblue; 
+            color: white;
+            font-weight: 800;
+            box-shadow: 0 10px 20px #999;
+            padding: 15px 25px;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: darken($secondary-green, 5%);
+                transform: translateY(-4px);
+            }
+        }
+    }
+}

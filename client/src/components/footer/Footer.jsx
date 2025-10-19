@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="footerContainer">
         <div className="footerSection">
-          <h1 className="logo">Web Name</h1>
+          <h1 className="logo">HealthMate</h1>
           <p className="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias porro a cupiditate! Ipsa obcaecati quas autem tempore reprehenderit architecto, fugit corporis voluptas quo ab?
+           An AI-based medical assistant that analyzes uploaded health reports and explains the results in simple language. Users can also chat with the AI for better understanding.
           </p>
         </div>
 

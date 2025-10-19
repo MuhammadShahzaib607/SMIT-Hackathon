@@ -1,5 +1,7 @@
 import express from "express"
 import authRoute from "./routes/authRoute.js"
+import analyzeRoutes from "./routes/orcRoute.js"
+import familyMemberRoutes from "./routes/memberRoute.js"
 import cors from "cors"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
@@ -11,6 +13,8 @@ dotenv.config()
 app.use(cors())
 app.use(express.json())
 app.use("/auth", authRoute)
+app.use("/orc", analyzeRoutes);
+app.use("/member", familyMemberRoutes);
 
 app.get("/", (req, res)=> {
     try {

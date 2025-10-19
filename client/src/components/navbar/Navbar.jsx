@@ -40,7 +40,7 @@ useEffect(() => {
 
         <div className='webName'>
           <Link to='/home'>
-            <h1 onClick={() => setIsOpen(false)}>Web Name</h1>
+            <h1 onClick={() => setIsOpen(false)}>HealthMate</h1>
           </Link>
         </div>
 
@@ -51,11 +51,11 @@ useEffect(() => {
           <Link to='/about' onClick={() => setIsOpen(false)}>
             <li className={pathname === '/about' ? 'navLinkActive' : ''}>about</li>
           </Link>
-          <Link onClick={() => setIsOpen(false)}>
-            <li className={pathname === '/peoples' ? 'navLinkActive' : ''}>Link 3</li>
+          <Link to="/dashboard" onClick={() => setIsOpen(false)}>
+            <li className={pathname === '/dashboard' ? 'navLinkActive' : ''}>AI Assistance</li>
           </Link>
-          <Link onClick={() => setIsOpen(false)}>
-            <li className={pathname === '/contact' ? 'navLinkActive' : ''}>Link 4</li>
+          <Link to="/familyDashboard" onClick={() => setIsOpen(false)}>
+            <li className={pathname === '/familyDashboard' ? 'navLinkActive' : ''}>Family Dashboard</li>
           </Link>
         </div>
 
@@ -106,8 +106,8 @@ useEffect(() => {
           <Link to="/editProfile" onClick={() => handleOptionClick('/profile')}>
             <li>Edit Profile</li>
           </Link>
-          <Link onClick={() => handleOptionClick('/editProfile')}>
-            <li>Option 3</li>
+          <Link to="/dashboard" onClick={() => handleOptionClick('/dashboard')}>
+            <li>Dashboard</li>
           </Link>
           <li onClick={() => {
             setIsOpen(false)
@@ -136,17 +136,17 @@ useEffect(() => {
             }}>
               <li className={pathname === '/about' ? 'navLinkActive' : ''}>about</li>
             </Link>
-            <Link onClick={() => {
+            <Link to="/dashboard" onClick={() => {
                 setIsOpen(false)
                 setIsToggle(false)
             }}>
-              <li className={pathname === '/peoples' ? 'navLinkActive' : ''}>Link 3</li>
+              <li className={pathname === '/dashboard' ? 'navLinkActive' : ''}>AI Assistance</li>
             </Link>
-            <Link onClick={() => {
+            <Link to="/familyDashboard" onClick={() => {
                 setIsOpen(false)
                 setIsToggle(false)
             }}>
-              <li className={pathname === '/contact' ? 'navLinkActive' : ''}>Link 4</li>
+              <li className={pathname === '/familyDashboard' ? 'navLinkActive' : ''}>Family Dashboard</li>
             </Link>
           </div>
 {/* 

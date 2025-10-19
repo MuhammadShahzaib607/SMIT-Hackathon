@@ -14,13 +14,19 @@ import Profile from './pages/profile/Profile'
 import NotFound from './pages/notFound/NotFound'
 import EditProfile from './pages/editProfile/EditProfile'
 import ScrollToTop from './components/scrollToTop/ScrollToTop'
+import Dashboard from './pages/dashboard/Dashboard'
+import FamilyDashboard from './pages/familyDashboard/FamilyDashboard'
+import MemberChat from './pages/memberChat/MemberChat'
 
 
 const visibleRoutes = [
   "/home",
   "/about",
   "/profile",
-  "/editProfile"
+  "/editProfile",
+  "/dashboard",
+  "/familyDashboard",
+  "/memberChat",
 ]
 
 function App() {
@@ -61,6 +67,9 @@ transition={Bounce}
     <Route path="/about" element={<About />} />
     <Route path="/profile" element={<Profile />} />
     <Route path="/editProfile" element={<EditProfile />} />
+    <Route path="/dashboard" element={<Dashboard />} />
+    <Route path="/familyDashboard" element={<FamilyDashboard />} />
+    <Route path="/memberChat/:id" element={<MemberChat />} />
   </Route>
   
 <Route path='*' element={<NotFound />} />

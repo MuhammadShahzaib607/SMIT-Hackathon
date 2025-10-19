@@ -1,0 +1,225 @@
+// ====================================================================
+// VARIABLES & BASE STYLES
+// ====================================================================
+$primary-color: #007bff;     // Blue for actions
+$secondary-color: #28a745;   // Green for success/save
+$danger-color: #dc3545;      // Red for delete
+$text-dark: #343a40;
+$bg-light: #f8f9fa;
+$card-bg: #ffffff;
+$font-family: 'Inter', sans-serif;
+
+@mixin card-shadow {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.family-dashboard-wrapper {
+    font-family: $font-family;
+    padding: 40px 5%;
+    background-color: $bg-light;
+    min-height: 100vh;
+
+    // ===============================
+    // HEADER
+    // ===============================
+    .dashboard-header {
+        text-align: center;
+        margin-bottom: 50px;
+
+        .main-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: $text-dark;
+            margin-bottom: 10px;
+
+            .title-icon {
+                color: $primary-color;
+            }
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: lighten($text-dark, 30%);
+            margin-bottom: 25px;
+        }
+
+        .add-member-btn {
+            background-color: $primary-color;
+            color: $card-bg;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            @include card-shadow;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            &:hover {
+                background-color: darken($primary-color, 10%);
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    // ===============================
+    // MEMBER LIST GRID
+    // ===============================
+    .member-list-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .member-card {
+            background-color: $card-bg;
+            padding: 30px;
+            border-radius: 12px;
+            border-top: 5px solid $secondary-color; // Accent border
+            @include card-shadow;
+
+            &:hover {
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            }
+
+            .member-name {
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-bottom: 8px;
+                color: $primary-color;
+            }
+            .report-count {
+                font-size: 0.9rem;
+                color: lighten($text-dark, 30%);
+            }
+            .last-update {
+                font-size: 0.95rem;
+                margin-top: 15px;
+                padding-top: 10px;
+                border-top: 1px dashed #eee;
+            }
+
+            .card-actions {
+                display: flex;
+                gap: 10px;
+                margin-top: 20px;
+
+                button {
+                    padding: 8px 15px;
+                    border-radius: 6px;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 0.9rem;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 5px;
+                    transition: background-color 0.2s;
+                }
+
+                .view-btn {
+                    background-color: $secondary-color;
+                    color: $card-bg;
+                    flex-grow: 1;
+
+                    &:hover {
+                        background-color: darken($secondary-color, 10%);
+                    }
+                }
+                .delete-btn {
+                    background-color: $danger-color;
+                    color: $card-bg;
+
+                    &:hover {
+                        background-color: darken($danger-color, 10%);
+                    }
+                }
+            }
+        }
+        
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 50px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            color: lighten($text-dark, 30%);
+        }
+    }
+    
+    // ===============================
+    // MODAL STYLING
+    // ===============================
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+
+        .modal-content {
+            background: $card-bg;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 450px;
+            animation: fadeIn 0.3s ease-out;
+
+            .modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 15px;
+                margin-bottom: 20px;
+
+                h3 { font-size: 1.5rem; }
+                .close-btn {
+                    background: none;
+                    border: none;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    color: lighten($text-dark, 50%);
+                }
+            }
+            
+            .modal-body {
+                label {
+                    display: block;
+                    margin-bottom: 8px;
+                    font-weight: 600;
+                }
+                input {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 20px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                }
+                .save-btn {
+                    width: 100%;
+                    background-color: $secondary-color;
+                    color: $card-bg;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 5px;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}

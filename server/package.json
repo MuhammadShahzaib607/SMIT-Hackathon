@@ -12,12 +12,18 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@google/genai": "^1.25.0",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
+    "jimp": "^1.6.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.2",
-    "start": "^5.1.0"
+    "multer": "^2.0.2",
+    "node-fetch": "^3.3.2",
+    "pdf-parser": "^1.0.5",
+    "start": "^5.1.0",
+    "tesseract.js": "^6.0.1"
   }
 }
